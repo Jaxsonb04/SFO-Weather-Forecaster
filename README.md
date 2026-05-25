@@ -22,7 +22,7 @@ Both models compete against two baselines: persistence ("same as now") and clima
 
 The headline finding: **on next-day highs, the LSTM beats XGBoost by 0.57°F MAE** even though XGBoost gets 69 hand-engineered features and the LSTM only gets 11 raw ones. The LSTM figures out the temporal structure on its own.
 
-On spot temperature they're essentially tied, which is itself interesting — it means hand-engineered lag features were doing most of XGBoost's work.
+On spot temperature they're essentially tied, which is itself interesting - it means hand-engineered lag features were doing most of XGBoost's work.
 
 ## What's honest about it
 
@@ -31,7 +31,7 @@ The model is good at average days and bad at heatwaves. Stratified eval shows MA
 Other limitations worth flagging:
 - Single station (SFO airport), so the model doesn't generalize to microclimates 5 miles away
 - 2020 data missing, so the model has a discontinuity in its training history
-- Test set is 2024-11 to 2026-05, which happened to be a mild stretch — fewer extremes to evaluate against
+- Test set is 2024-11 to 2026-05, which happened to be a mild stretch - fewer extremes to evaluate against
 
 ## File map
 combine_psv.py       NOAA pipe-delimited files -> single clean CSV
@@ -69,4 +69,4 @@ Each step writes to disk so you don't have to rerun upstream stages.
 
 ## Why I built this
 
-I'm teaching myself ML end-to-end and wanted something that wasn't a toy dataset. Weather has all the things that make real ML problems hard: time-series structure, missing data, distribution shift, rare events, and a clear notion of what "good" means. Also the results are testable — I can check the model against actual weather tomorrow.
+I'm teaching myself ML end-to-end. Weather has all the things that make real ML problems hard: time-series structure, missing data, distribution shift, rare events, and a clear notion of what "good" means. Also the results are testable - I can check the model against actual weather tomorrow.

@@ -3,6 +3,8 @@
 #
 # note: freezes in terminal -- needs debugging before running.
 
+# still need to add more metrics to the comparison.
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
